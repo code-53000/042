@@ -1,0 +1,108 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'Space Grotesk', 'JetBrains Mono', system-ui, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: dark;
+  background-color: #141418;
+  color: #e8e8ed;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: #141418;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(79, 140, 255, 0.08), transparent),
+    radial-gradient(ellipse 60% 40% at 100% 0%, rgba(255, 140, 66, 0.06), transparent);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1e1e24;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3a3a44;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4a4a55;
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2 rounded-md bg-mecha-blue hover:bg-mecha-blueHover text-white font-medium transition-all duration-200 shadow-inner-groove hover:shadow-glow-blue active:scale-95;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2 rounded-md bg-workspace-card hover:bg-workspace-border text-workspace-text font-medium border border-workspace-border hover:border-workspace-borderHover transition-all duration-200 shadow-inner-groove active:scale-95;
+  }
+
+  .btn-danger {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2 rounded-md bg-mecha-red/90 hover:bg-mecha-red text-white font-medium transition-all duration-200 shadow-inner-groove active:scale-95;
+  }
+
+  .btn-orange {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2 rounded-md bg-mecha-orange hover:bg-mecha-orangeHover text-white font-medium transition-all duration-200 shadow-inner-groove hover:shadow-glow-orange active:scale-95;
+  }
+
+  .card {
+    @apply bg-gradient-card rounded-lg border border-workspace-border shadow-inner-groove transition-all duration-300 hover:border-workspace-borderHover;
+  }
+
+  .card-glow:hover {
+    @apply shadow-card-hover;
+  }
+
+  .input-field {
+    @apply w-full px-3 py-2 rounded-md bg-workspace-bg border border-workspace-border text-workspace-text placeholder-workspace-muted focus:outline-none focus:border-mecha-blue focus:ring-2 focus:ring-mecha-blue/30 transition-all duration-200 font-mono text-sm;
+  }
+
+  .label {
+    @apply block text-xs font-medium text-workspace-textDim uppercase tracking-wider mb-1.5 font-display;
+  }
+
+  .tag {
+    @apply inline-flex items-center px-2 py-0.5 rounded text-xs font-mono border;
+  }
+
+  .badge {
+    @apply inline-flex items-center justify-center px-2 py-0.5 rounded-full text-[10px] font-semibold uppercase tracking-wider;
+  }
+
+  .divider {
+    @apply h-px bg-workspace-border my-4;
+  }
+
+  .section-title {
+    @apply text-lg font-display font-semibold text-workspace-text flex items-center gap-2 mb-4;
+  }
+
+  .progress-track {
+    @apply relative h-2 rounded-full bg-workspace-bg overflow-hidden border border-workspace-border;
+  }
+
+  .progress-fill {
+    @apply h-full rounded-full transition-all duration-500 ease-out;
+  }
+
+  .timeline-dot {
+    @apply w-3 h-3 rounded-full border-2 transition-all duration-200;
+  }
+}
